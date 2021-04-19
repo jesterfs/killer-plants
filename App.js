@@ -1,6 +1,8 @@
 import React , {useState} from 'react';
 import {Component} from "react";
 import { View, Text, Button } from "react-native";
+import Main from './mainscreen.js';
+import Inspector from './inspection.js';
 // import { Button } from 'react-native-elements';
 
 export default function App() {
@@ -167,11 +169,9 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <Text>A detective comes snooping around...</Text>
-    
-      <Button
-        title="Bribe Him - $20"
-        onPress={bribe}
+      <Inspector 
+        bribe = {bribe}
+        risk = {risk}
         />
       
     </View>
@@ -206,26 +206,17 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <Text>Customers in store: {customers}</Text>
-      <Text>Money: {money}</Text>
-      <Text>Your Plant's Bloodlust is {bloodlust}</Text>
-      <Text>Superfood: {superFoodCount}</Text>
-        <Text>Suspicion: {risk}</Text>
-      <Button
-        title="Feed Him a Customer"
-        onPress={feedHim}
-        />
-      <Button
-        title="Buy Superfood"
-        onPress={buySuperFood}
-        />
-      <Button
-        title="Let in a customer"
-        onPress={letInCustomer}
-        />
-      <Button
-        title="Make a Sale"
-        onPress={makeSale}
+      <Main
+        bloodlust = {bloodlust}
+        customers = {customers}
+        money = {money}
+        risk = {risk}
+        superFoodCount = {superFoodCount}
+        feedHim = {feedHim}
+        letInCustomer = {letInCustomer}
+        makeSale = {makeSale}
+        buySuperFood = {buySuperFood}
+        
         />
       
     </View>
